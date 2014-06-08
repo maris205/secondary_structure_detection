@@ -1,0 +1,45 @@
+Segmenting ss_06.dat.seg7 using 1-gram model
+Boundary initialization: ran
+Unigram generator: monkeys
+ alpha0: 20, p_boundary: 0.5
+Sampling of hyperparameters: OFF
+Phoneme distribution: uniform
+Sampling 1000 iterations
+evaluating a sample
+random seed = 1401805849
+alphabet size = 22
+Raising temperature in 10 increments: (0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1)
+
+Reference lexicon summary:
+
+Total words of each length (token/type): 
+1: 822384 (31.3991%) / 22 (0.0095395%)
+2: 833424 (31.8207%) / 406 (0.176047%)
+3: 341337 (13.0325%) / 7916 (3.43249%)
+4: 352767 (13.4689%) / 63533 (27.5488%)
+5: 154142 (5.88524%) / 64163 (27.822%)
+6: 65478 (2.49999%) / 54424 (23.599%)
+7: 49597 (1.89364%) / 40156 (17.4122%)
+Average word length: 2.45695 / 5.23443
+
+Segmented lexicon summary:
+
+Total words of each length (token/type): 
+1: 1555306 (43.3114%) / 22 (0.487913%)
+2: 1325579 (36.9141%) / 384 (8.5163%)
+3: 662636 (18.4528%) / 3451 (76.5358%)
+4: 34180 (0.951828%) / 498 (11.0446%)
+5: 1339 (0.0372878%) / 30 (0.665336%)
+6: 2567 (0.0714846%) / 34 (0.754047%)
+7: 1688 (0.0470066%) / 25 (0.554447%)
+8: 3404 (0.0947929%) / 28 (0.62098%)
+9: 987 (0.0274855%) / 21 (0.465735%)
+10: 2414 (0.0672239%) / 8 (0.177423%)
+11: 882 (0.0245615%) / 5 (0.110889%)
+18: 1 (2.78475e-05%) / 1 (0.0221779%)
+35: 1 (2.78475e-05%) / 1 (0.0221779%)
+53: 1 (2.78475e-05%) / 1 (0.0221779%)
+Average word length: 1.79201 / 3.17543
+
+P 11.44 R 15.68 F 13.23 BP 40.84 BR 56.13 BF 47.28 LP 95.81 LR 1.873 LF 3.675
+p_cont=0.993486, log prob = -2.1764e+07
