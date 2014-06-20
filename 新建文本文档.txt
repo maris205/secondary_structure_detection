@@ -1,9 +1,0 @@
-normally, those substrings that occur more than
-once are considered qualified word candidates.
-
-
-
-
-
-
-How the protein primary structure govern its secondary structure is still an open problem. We discuss this problem using the unsupervised word segmentation methods in natural language processing area. These researches are mainly driven by two problems. The first is how infants learn language. Infants have no any preliminary knowledge. But they could still identify word boundaries in continuous speech. The second problem is about the evolution of human language. One language begin with few simple "words". Then new terms carrying complex semantics are inverted to convey more information. Then how to find "new" words/phrase becomes an important research topic. These search normally use the letter sequences with no whitespace like "iloveapple..." as input data. Then they could learn rules from these data and segment the letter sequence into word sequence like "i love apple". Because these methods only use the letter sequences, with no any other information, they are called unsupervised segmentation method. We could also use the protein sequences like "MTMDKSELVQKA..." as the input of unsupervised segmentation method. Then we will get the "protein word" sequences like "MTM \ DKSE \ LVQKA". Such sequence could also be "divided" into segments like "MTMD \ KSE \ LVQKA" according to its secondary structure. We find there are many similar features between these 'protein word' and secondary structure segments. This result may bring some new tips about the relation of protein primary structure and its secondary structure.
