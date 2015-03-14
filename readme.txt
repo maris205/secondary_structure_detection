@@ -40,6 +40,7 @@ grep '>' ss.fasta.uniq > ss.fasta.uniq.pid
 
 #get final experimental data
 ./get_experiment_data.py ss.fasta.uniq.pid ss.txt > ss_06.dat
+You can run   ./pre_process.sh   to do all the things above.
 
 #get protein sequence
 awk 'NR%3==1 {print $0}' > ss_06.dat.pr
@@ -47,7 +48,6 @@ awk 'NR%3==1 {print $0}' > ss_06.dat.pr
 Then copy the file   “ss_06.dat”   to directory   “paper_experiment/evaluation”
 Copy the file “ss_06.dat.pr” to directory “paper_experiment/hdp” and “paper_experiment/soft_count”
 
-You can run   ./pre_process.sh   to do all the things above.
 
 2 run experiment (in   paper_experiment   directory)
 
@@ -73,6 +73,10 @@ Then we could compare these two standard segmentation with unsupervised word seg
 ./ evaluate_segment.py ss_06.dat.structure_length_limit_seg ss_06.dat.pr.hdp_seg.words
 
 We also need copy the vocabulary file “ss_06.dat.structure_dict_length9” to  directory   “paper_experiment/ dna_segment”
+
+You could also run "description length" test for segmented sequence, for example
+./get_description_length.py ss_06.dat.structure_seg
+
 2.4 segment dna sequence
 You should copy the file “Translate.py” in this directory to the directory where Biopython install. Normally, it’s “/usr/local/lib/python2.7/site-packages/Bio”. It contain the back translate function, but this function is deleted in new version. 
 
@@ -80,6 +84,20 @@ Then run:
 ./run_dna_segment_experiment.sh
 
 We also prepare English corpus in “ori_data/english/english.txt” and “ori_data/english/english.txt.nospace”, you can also run test above for English text. “english.txt” is standard segmentation and then run soft unsupervised segmentation method for “english.txt.nospace”
+
+
+Our test shows using large data sets can't improve the unsupervised segmentation performance.
+But if you need more protein sequence, you can download the data from swiss:
+
+http://www.uniprot.org/downloads
+
+UniProtKB/Swiss-Prot：
+ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
+
+UniProtKB/TrEMBL
+ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_trembl.fasta.gz
+
+To process these protein data, you may need a 16G memory machine , or run test in Hadoop. Most of our codes could run in Hadoop.
 
 
 
