@@ -14,4 +14,4 @@
 ./viterbi_segment.py dna.dict test.dna > test.dna.seg
 
 #step 3, caculate the protein word coverage rate of each dna sequence
-./get_protein_coverge_rage.py test.dna.seg
+./get_protein_coverge_rage.py test.dna.seg > test.dna.seg.coverage
