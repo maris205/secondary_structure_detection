@@ -7,16 +7,17 @@ paper_experiment: experiment for paper, it contains this sub directory:
 	hdp: hdp algorithm segment test
 	soft_count: soft-counting segment test
 	evaluation: evaluate the segment results
-	dna_segment: dna sequence segment test  
+	dna_segment: dna sequence segment test
 src: some other unsupervised segment method codes, not mentioned in our paper (python)
 our paper: http://arxiv.org/abs/1404.6866
 
 Protein Structure Data source:
-From this page: 
+From this page:
+
 http://www.rcsb.org/pdb/static.do?p=download/http/index.html
 We download:
 http://www.rcsb.org/pdb/files/ss.txt.gz
-We have pre downloaded this data in ori_data directory as   ss.zip  , so you need   unzip   this file first. It’s the DSSP secondary sstructure. 
+We have pre downloaded this data in ori_data directory as   ss.zip  , so you need   unzip   this file first. It’s the DSSP secondary sstructure.
 
 Preliminary software:
 1 cd-hits, we use this tools to delete the similar sequence. It could be found in http://weizhong-lab.ucsd.edu/cd-hit/download.php, after installing it, please copy file   cd-hit   to   ori_data   of this project.(these has been a “cd-hit” in this directory, only test in centos 64 Linux systems)
@@ -31,12 +32,12 @@ We mainly use the DSSP secondary structure data. To process other forms of struc
 
 1 preprocess, mainly filter the similar sequence (in ori_data directory)
 #get fasta format file
-/get_fasta_file.py ss.txt > ss.fasta   
+/get_fasta_file.py ss.txt > ss.fasta
 
 #delete similar sequence
 ./cd-hit -i ss.fasta -o  ss.fasta.uniq -c 0.6 -n 4 -M 20000
 #get pid
-grep '>' ss.fasta.uniq > ss.fasta.uniq.pid 
+grep '>' ss.fasta.uniq > ss.fasta.uniq.pid
 
 #get final experimental data
 ./get_experiment_data.py ss.fasta.uniq.pid ss.txt > ss_06.dat
@@ -78,7 +79,7 @@ You could also run "description length" test for segmented sequence, for example
 ./get_description_length.py ss_06.dat.structure_seg
 
 2.4 segment dna sequence
-You should copy the file “Translate.py” in this directory to the directory where Biopython install. Normally, it’s “/usr/local/lib/python2.7/site-packages/Bio”. It contain the back translate function, but this function is deleted in new version. 
+You should copy the file “Translate.py” in this directory to the directory where Biopython install. Normally, it’s “/usr/local/lib/python2.7/site-packages/Bio”. It contain the back translate function, but this function is deleted in new version.
 
 Then run:
 ./run_dna_segment_experiment.sh
